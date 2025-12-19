@@ -3,7 +3,7 @@ import os
 from linebot import LineBotApi, WebhookHandler
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
 
-app = Flask(name)
+app = Flask(__name__)
 
 line_bot_api = LineBotApi(os.getenv("CHANNEL_ACCESS_TOKEN"))
 handler = WebhookHandler(os.getenv(”CHANNEL_SECRET“))
@@ -22,5 +22,5 @@ def handle_message(event):
         TextSendMessage(text=”สวัสดี นี่คือบอทไลน์ 🤖“)
     )
 
-if name == ”main“:
+if __name__ == ”__main__“:
     app.run()
