@@ -8,7 +8,7 @@ app = Flask(__name__)
 line_bot_api = LineBotApi(os.getenv("CHANNEL_ACCESS_TOKEN"))
 handler = WebhookHandler(os.getenv("CHANNEL_SECRET"))
 
-@app.route(”/callback“, methods=[’POST‘])
+@app.route("/callback", methods=[’POST‘])
 def callback():
     signature = request.headers[’X-Line-Signature‘]
     body = request.get_data(as_text=True)
@@ -19,7 +19,7 @@ def callback():
 def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=”สวัสดี นี่คือบอทไลน์ 🤖“)
+        TextSendMessage(text="สวัสดี นี่คือบอทไลน์ 🤖")
     )
 
 if __name__ == "__main__":
