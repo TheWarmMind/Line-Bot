@@ -25,7 +25,7 @@ def handle_message(event):
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
-    @handler.add(MessageEvent, message=TextMessage
+    @handler.add(MessageEvent, message=TextMessage)
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     user_text = event.message.text
