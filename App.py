@@ -14,18 +14,18 @@ def callback():
     body = request.get_data(as_text=True)
     handler.handle(body, signature)
     return 'OK'
-
+    
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
+    
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text="🤍สวัสดีค่ะ WarmMind ยินดีต้อนรับนะคะ ไม่ว่าจะรู้สึกแบบไหน มาค่อยๆคุยกันได้เลยค่ะ ที่นี่ไม่มีการตัดสินมีแต่ความเข้าใจค่ะ")
     )
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))
-    app.run(host="0.0.0.0", port=port)
-
+    
 def handle_message(event):
     user_text = event.message.text.lower()
 
