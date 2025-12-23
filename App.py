@@ -17,12 +17,6 @@ def callback():
    
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text="🤍สวัสดีค่ะ WarmMind ยินดีต้อนรับนะคะ ไม่ว่าจะรู้สึกแบบไหน มาค่อยๆคุยกันได้เลยค่ะ ที่นี่ไม่มีการตัดสินมีแต่ความเข้าใจค่ะ")
-    )
-    
-def handle_message(event):
     user_text = event.message.text.lower()
 
     if "เหนื่อย" in user_text:
